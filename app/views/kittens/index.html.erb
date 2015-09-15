@@ -19,12 +19,12 @@
 			<%= @kittens.each do |kitten| %>
 
 				<tr>
-					<td>kitten.name</td>
-					<td>kitten.age</td>
-					<td>kitten.cuteness</td>
-					<td>kitten.softness</td>
-					<td>kitten.toughness</td>
-					<td>kitten.description</td>
+					<td><%= kitten.name %></td>
+					<td><%= kitten.age %></td>
+					<td><%= kitten.cuteness %></td>
+					<td><%= kitten.softness %></td>
+					<td><%= kitten.toughness %></td>
+					<td><%= kitten.description %></td><br>
 					<td><%= link_to 'Show', kitten %></td>
 					<td><%= link_to 'Edit', edit_kitten_path(kitten) %></td>
 					<td><%= link_to 'Destroy', kitten: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,7 +33,6 @@
 			</tbody>
 		</table>
 
-		<br>
 		<%= link_to 'New Kitten', new_kitten_path %>
 </div>
 
