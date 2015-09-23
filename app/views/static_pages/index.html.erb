@@ -1,0 +1,17 @@
+<div class='container'>
+	<p> Search for your Flickr photos using their ID:</p>
+
+<br>
+
+	<%= form_tag('/static_pages', method: 'get') do %>
+		<%= label_tag(:id, "What is your Flickr user id?") %>
+		<%= text_field_tag(:id) %>
+		<%= submit_tag("Submit") %>
+	<% end %>
+	
+	<h4> Flickr id: <%= @id %></h4>
+
+	<% cache ("flickr_sidebar") do %>
+	  <%= render_flickr_sidebar_widget(@id) %>
+	<% end %>
+</div>
