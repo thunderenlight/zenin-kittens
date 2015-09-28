@@ -11,9 +11,7 @@
 	<div class="<%= name %>"><%= msg %>
 	</div>
 	<% end %>
-	<% cache ('flickr_sidebar') do %>
-	<%= render_flickr_sidebar_widget('135492661@N08') %>
-	<% end %>
+
 <%= yield %>
 
 </body>

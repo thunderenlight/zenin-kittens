@@ -1,12 +1,24 @@
 class KittensController < ApplicationController
 	respond_to :html, :json
 
+  include FlickrHelper
+
 	def index
 		@kittens = Kitten.all
-		respond_to do |format|
-			format.json {render json: @kittens }
-			format.html { respond_with @kittens }
-		end
+		if params[:id]
+			id = params[:id]
+	    	@photos = user_photos(id)
+	    else
+	    	@photos = user_photos('132826669@N04')
+	    end
+
+		# respond_to do |format|
+		# 	format.json {render json: @kittens }
+		# 	format.html { respond_with @kittens }
+		# end
+		
+
+	   
 	end
 
 
